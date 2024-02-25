@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="OOPSynoptic" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SAMUEL-HOME\SQLEXPRESS;Initial Catalog=OOPSynoptic;Integrated Security=True;Encrypt=False" SettingsObjectName="OOPSynoptic.Properties.Settings" SettingsPropertyName="OOPSynopticConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="Syn.Appointments" Member="Appointments">
+    <Type Name="Appointment">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TagId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Tag_Appointment" Member="Tag" ThisKey="TagId" OtherKey="TagId" Type="Tag" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Syn.Tags" Member="Tags">
+    <Type Name="Tag">
+      <Column Name="TagId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="Tag_Appointment" Member="Appointments" ThisKey="TagId" OtherKey="TagId" Type="Appointment" />
+    </Type>
+  </Table>
+</Database>
