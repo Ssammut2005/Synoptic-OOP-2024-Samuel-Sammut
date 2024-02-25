@@ -1,0 +1,2 @@
+C:\Users\samue\source\repos\SE2.2\SE2.2\obj\Debug\SE2.2.csproj.AssemblyReference.cache
+C:\Users\samue\source\repos\SE2.2\SE2.2\obj\Debug\SE2.2.csproj.CoreCompileInputs.cache
